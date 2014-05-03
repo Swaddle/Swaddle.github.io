@@ -1,0 +1,148 @@
+<!doctype html!>
+
+<html>
+    <head>
+
+
+        <!-- Credit for Impress.js goes bartoszpoka , see his github bartaz.github.io -->
+
+        <link rel="stylesheet" href="css/proposal.css">
+        
+
+        <!-- mathjax, latex for the browser //-->
+
+        <script type="text/javascript"
+            src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+
+    </head>    
+
+    <!-- Its a wip //--> 
+
+    <body>
+        <div id="impress">
+
+            <div id="introduction"  class="step" data-x="2000" data-y="0" data-z="-2000" data-rotate-x="-90">
+            <h1>
+            Numerical investigation of geodesics for optimal quantum circuits   
+            </h1>
+            </div>
+            
+            
+            <div class="step slide" data-x="0" data-y="0">
+            <ul>
+            <li>
+            Michael Swaddle
+            </li>
+            
+            <li>
+            Jingbo Wang
+            </li>    
+                
+            </ul>
+            </div>
+            
+            <div class="step slide" data-x="1000" data-y="0">
+            <ul>
+            <li>
+            A manifold is a space that looks locally Euclidean.       
+            </li>
+                
+            </ul>
+            </div>
+        
+            <div class="step slide" data-x="2000" data-y="0">
+            First we define the control hamiltonian;
+            \[ \mathcal{K}(t) = \sum_{i} k_i(t) \;\sigma_i  \]      
+            Where the \( \sigma \) are generalised pauli matrices. They are the "directions" we can move in the manifold.
+            If we re-write out variational problem, we get two equations we want to solve.
+            First one for the control hamiltonian;
+            \[ \mathcal{K}'(t) = \mathcal{C}^{-1} [ \mathcal{C} \mathcal{K}(t) ,\mathcal{K}(t) ] \]
+            And one for the geodesic itself;        
+            \[ \mathcal{X}'(t) = \mathcal{K}(t) \mathcal{X}(t) \]
+            </div>
+            
+            <div class="step slide" data-x="3000" data-y="1000" data-z="-1000"  data-rotate-y="90">
+            The problem is these equations are in a very high dimensional manifold.
+            \(\mathcal{X}(t)\) and \(\mathcal{K}(t)\) are curves in the space of special unitary matrices \(\text{SU}(2^n)\). Thus we have 
+            \(2^n \times 2^n\) equations we need to solve. 
+            </div>
+            
+            <div class="step slide" data-x="3000" data-y="1000" data-z="-2000"  data-rotate-y="90">
+            derp
+            </div>
+                
+            <div class="step slide" data-x="3000" data-y="1000" data-z="-3000"  data-rotate-y="90">
+            derp
+            </div>
+           
+            
+            <div class="step slide" data-x="2000" data-y="2000" data-z="-4000"  data-rotate-y="180">
+            derp
+            </div>
+                
+            <div class="step slide" data-x="1000" data-y="2000" data-z="-4000"  data-rotate-y="180">
+            derp
+            </div>
+            
+            <div class="step slide" data-x="0" data-y="2000" data-z="-4000"  data-rotate-y="180">
+            derp
+            </div>
+            
+            
+            
+            <div class="step slide" data-x="-1000" data-y="3000" data-z="-3000"  data-rotate-y="-90">
+            The problem is these equations are in a very high dimensional manifold.
+            \(\mathcal{X}(t)\) and \(\mathcal{K}(t)\) are curves in the space of special unitary matrices \(\text{SU}(2^n)\). Thus we have 
+            \(2^n \times 2^n\) equations we need to solve. 
+            </div>
+            
+            <div class="step slide" data-x="-1000" data-y="3000" data-z="-2000"  data-rotate-y="-90">
+            derp
+            </div>
+                
+            <div class="step slide" data-x="-1000" data-y="3000" data-z="-1000"  data-rotate-y="-90">
+            derp
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div id="overview" class="step" data-x="1000" data-y="1000"  data-scale="4">
+            </div>
+            
+            
+            
+        </div>
+    </body>
+    
+    
+   <!--
+   mathjax doesnt work yet
+   //--> 
+
+    <script type="text/x-mathjax-config"> 
+        MathJax.Hub.Config({ 
+            skipStartupTypeset: true 
+        }); 
+    </script> 
+    
+    <!--
+    call impress.js
+    //-->
+
+    <script src="js/impress.js"></script>
+    <script>impress().init();</script>
+
+  
+    
+    
+    
+    
+</html>
