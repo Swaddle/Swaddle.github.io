@@ -1,5 +1,5 @@
-var canvas = document.getElementById('myCanvas');
-var ctx = canvas.getContext('2d');
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
 var numberOfSides = 6;
 var Xcenter = 720;
 var Ycenter = 360;
