@@ -1,25 +1,27 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var xCenter = [520, 620, 720, 820, 920];
-var yCenter = [360, 310, 260];
+var coords = [[520, 360], [620, 310], [720, 360], [820, 310], [920, 360]];
 var numberOfSides = 6;
 var size = 50;
 var i;
 
+var pt;
+
 var x,
     y;
 
-for (x = 0; x < xCenter.length; x += 1) {
-    for (y = 0; y < yCenter.length; y += 1) {
-        ctx.beginPath();
-        ctx.moveTo(xCenter[x] +  size * Math.cos(0), yCenter[y] +  size *  Math.sin(0));
+for (pt = 0; pt < coords.length; pt += 1) {
+    x = coords[pt][0];
+    y = coords[pt][1];
+    ctx.beginPath();
+    ctx.moveTo(x +  size * Math.cos(0), y +  size *  Math.sin(0));
 
-        for (i = 1; i <= numberOfSides; i += 1) {
-            ctx.lineTo(xCenter[x] + size * Math.cos(i * 2 * Math.PI / numberOfSides), yCenter[y] + size * Math.sin(i * 2 * Math.PI / numberOfSides));
-        }
-
-        ctx.strokeStyle = "#000000";
-        ctx.lineWidth = 2;
-        ctx.stroke();
+    for (i = 1; i <= numberOfSides; i += 1) {
+        ctx.lineTo(x + size * Math.cos(i * 2 * Math.PI / numberOfSides), y + size * Math.sin(i * 2 * Math.PI / numberOfSides));
     }
+
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 2;
+    ctx.stroke();
 }
+
