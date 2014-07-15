@@ -1,6 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var coords = [[520, 360], [620, 310], [720, 360], [820, 310], [920, 360]];
+var coords = [[520, 360], [620, 310], [720, 360], [820, 310], [920, 360], [620, 410], [820, 410]];
 var numberOfSides = 6;
 var size = 50;
 var i;
@@ -21,6 +21,7 @@ for (pt = 0; pt < coords.length; pt += 1) {
     }
 
     ctx.strokeStyle = "#000000";
+    ctx.fillStyle = (Math.random().toString(16) + '000000').slice(2, 8);
     ctx.lineWidth = 2;
     ctx.stroke();
 }
