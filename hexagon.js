@@ -1,6 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var coords = [[520, 360], [625, 310], [720, 360], [820, 310], [920, 360], [620, 410], [815, 410]];
+var coords = [[520, 360], [620, 310], [720, 360], [820, 310], [920, 360], [620, 410], [820, 410]];
 var numberOfSides = 6;
 var size = 50;
 var i;
