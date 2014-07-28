@@ -5,15 +5,25 @@
 }
 
 
-body,html 
+body,html
 {
     width:100%;
     height:100%;
     padding: 0;
     margin:0;
+    font-family: "HelveticaNeue-Light";
 }
 
-#myCanvas {
-    position:absolute;
-    height:100%; 
+.outer
+{
+
+    position:relative; 
+    top: 50%; 
+}
+
+.clockBox 
+{
+    font-size:  100px; 
+    margin: auto 10px;
+    text-align: center;
 }
