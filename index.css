@@ -11,7 +11,8 @@ body,html
     height:100%;
     padding: 0;
     margin:0;
-    font-family: "HelveticaNeue-Light";
+    /*font-family: "HelveticaNeue-Light";*/
+    font-family: 'Oswald', sans-serif; 
 }
 
 .outer

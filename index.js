@@ -11,6 +11,7 @@ function countDown(dat)
     
     function showTime() 
     {
+        var audio = new Audio("24.mp3");
         var now = new Date();
         var distance = happening - now;
         var days = Math.floor(distance / d);
@@ -41,6 +42,7 @@ function countDown(dat)
         } else {
             document.getElementById('seconds').innerHTML = seconds;
         }
+        audio.play();
     }
     
     timer = setInterval(showTime, 1000);
