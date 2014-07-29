@@ -8,10 +8,10 @@ function countDown(dat)
     var hr = 60 * min;
     var d = 24 * hr; 
     var timer;
+    var audio = new Audio("24.mp3");
     
     function showTime() 
     {
-        var audio = new Audio("24.mp3");
         var now = new Date();
         var distance = happening - now;
         var days = Math.floor(distance / d);
@@ -20,21 +20,23 @@ function countDown(dat)
         var seconds = Math.floor((distance % min) / sec);
         
         if(days <= 9) {
-            document.getElementById('days').innerHTML = "0" + days ;
+            document.getElementById('days').innerHTML = "00" + days + " :" ;
+        } else if(days <= 99) {
+            document.getElementById('days').innerHTML = "0" + days + " :";
         } else {
-            document.getElementById('days').innerHTML = days ;
+            document.getElementById('days').innerHTML = days + " :";
         }
         
         if(hours <= 9) {
-            document.getElementById('hours').innerHTML = "0" + hours;
+            document.getElementById('hours').innerHTML = "0" + hours + " :";
         } else {
-            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('hours').innerHTML = hours + " :" ;
         }
         
         if(minutes <= 9) {
-            document.getElementById('minutes').innerHTML = "0" + minutes;
+            document.getElementById('minutes').innerHTML = "0" + minutes+ " :";
         } else {
-            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('minutes').innerHTML = minutes+ " :";
         }
         
         if( seconds <= 9) {
@@ -42,13 +44,20 @@ function countDown(dat)
         } else {
             document.getElementById('seconds').innerHTML = seconds;
         }
-        audio.play();
     }
+    
+    audio.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+    audio.play();
+
+    
     
     timer = setInterval(showTime, 1000);
 }
 
 function clock() 
 {
-    countDown("October 30, 2014 12:00:00")
+    countDown("October 31, 2014 17:00:00")
 }

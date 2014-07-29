@@ -13,13 +13,17 @@ body,html
     margin:0;
     /*font-family: "HelveticaNeue-Light";*/
     font-family: 'Oswald', sans-serif; 
+    background-color: #f5f1f1; 
+
 }
 
 .outer
 {
 
     position:relative; 
-    top: 50%; 
+    top: 30%;
+    border-bottom: 1px solid #a0a0a0;
+    border-top :  1px solid #a0a0a0; 
 }
 
 .clockBox 
@@ -27,4 +31,11 @@ body,html
     font-size:  100px; 
     margin: auto 10px;
     text-align: center;
+
+}
+
+span
+{
+    color: #545457;
+
 }
