@@ -46,12 +46,12 @@ function countDown(dat)
         }
     }
     
-    audio.addEventListener('ended', function() {
+    /*audio.addEventListener('ended', function() {
         this.currentTime = 0;
         this.play();
     }, false);
     audio.play();
-
+    */
     
     
     timer = setInterval(showTime, 1000);
@@ -59,5 +59,5 @@ function countDown(dat)
 
 function clock() 
 {
-    countDown("October 31, 2014 17:00:00")
+    countDown("October 31, 2014 16:00:00")
 }

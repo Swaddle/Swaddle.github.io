@@ -38,3 +38,16 @@ span
 {
     color: #ffb308;
 }
+
+
+#vidBoxOuter
+{
+    top: 70%;
+    position: relative;
+}
+
+#vidBox
+{
+    text-align: center;
+}
+
