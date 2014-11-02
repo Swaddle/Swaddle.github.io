@@ -1,6 +1,6 @@
-* 
+*
 {
-    margin: 0; 
+    margin: 0;
     padding: 0;
 }
 
@@ -12,42 +12,13 @@ body,html
     padding: 0;
     margin:0;
     /*font-family: "HelveticaNeue-Light";*/
-    font-family: 'Oswald', sans-serif; 
-    background-color: #262626; 
+    font-family: 'Roboto', sans-serif;
+    background-color: #fdfdfd;
 
 }
 
-.outer
+.main_content
 {
-
-    position:relative; 
-    top: 30%;
-    border-bottom: 1px solid #212020;
-    border-top :  1px solid #212020; 
-}
-
-.clockBox 
-{
-    font-size:  100px; 
-    margin: auto 10px;
-    text-align: center;
-
-}
-
-span
-{
-    color: #ffb308;
-}
-
-
-#vidBoxOuter
-{
-    top: 70%;
-    position: relative;
-}
-
-#vidBox
-{
-    text-align: center;
+    font-weight: 100;    
 }
 
