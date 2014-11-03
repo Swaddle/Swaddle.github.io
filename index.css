@@ -17,8 +17,41 @@ body,html
 
 }
 
-.main_content
+#main_content
 {
     font-weight: 100;    
+    text-align: center;
 }
 
+#header_nav
+{
+    align-content: center;
+    text-align: center;
+}
+
+#nav_box
+{ 
+    height: 90px;
+
+}
+
+#nav_list
+{
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+li
+{
+    display: inline; 
+    font-size: 24px;
+    margin: 12px;
+    padding: 10px;
+}
+
+a:link
+{
+
+}
