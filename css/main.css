@@ -17,10 +17,18 @@ body,html
 
 }
 
+#main
+{
+    width: auto;
+    text-align: center;
+    align-content: center;
+}
+
 #main_content
 {
     font-weight: 100;    
     text-align: center;
+    width: 80%:
 }
 
 #header_nav
