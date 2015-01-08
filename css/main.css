@@ -24,7 +24,7 @@ body,html
     height: 90%;
 }
 
-#main_content
+#article
 {
     font-weight: 100;    
     margin-left: 120px;
@@ -60,26 +60,41 @@ li
 }
 
 /* unvisited link */
-a:link {
+a:link 
+{
     text-decoration: none; 
     color: rgb(248, 248, 248);
 }
 
 /* visited link */
-a:visited {
+a:visited 
+{
     text-decoration: none; 
     color: rgb(248, 248, 248);
 }
 
 /* mouse over link */
-a:hover {
+a:hover 
+{
     text-decoration: none; 
     color: rgb(247, 192, 89);
 }
 
 /* selected link */
-a:active {
+a:active 
+{
     text-decoration: none; 
     color: rgb(248, 248, 248);
 }
- 
+
+h1 
+{
+    color: rgb(47, 47, 47);
+    padding: 10px;
+    text-align: center;
+}
+
+p  
+{
+    margin-bottom: 12px;
+}
