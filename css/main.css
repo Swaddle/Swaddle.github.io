@@ -34,7 +34,7 @@ body,html
 
 #header_nav
 {
-    height: 90px;
+    height: 42px;
     align-content: center;
     text-align: center;
     background-color: rgb(65, 65, 65);
@@ -42,21 +42,22 @@ body,html
 
 #nav_box
 { 
-    padding: 10px;
+    padding: 1px;
 }
 
 #nav_list
 {
     list-style-type: none;
-    margin-top: 20px
+    margin-top: 9px;
+    font-size: 16px;
 }
 
 li
 {
     display: inline; 
-    font-size: 20px;
-    margin: 12px;
-    padding: 10px;
+    margin-left : 12px;
+    margin-right: 12px;
+    padding:  0px;
 }
 
 /* unvisited link */
