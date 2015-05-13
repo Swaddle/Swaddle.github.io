@@ -59,5 +59,5 @@ function countDown(dat)
 
 function clock() 
 {
-    countDown("October 31, 2014 16:00:00")
+    countDown("September 31, 2015 17:00:00")
 }
