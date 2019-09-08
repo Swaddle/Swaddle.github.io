@@ -7,9 +7,6 @@ import Control.Applicative
 import Text.Pandoc
 import Text.Pandoc.Options
 
-mathJaxURL :: String 
-mathJaxURL = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"
-
 foldMapA :: (Applicative f, Foldable t, Monoid m) => (a -> f m) -> t a -> f m
 foldMapA f = foldr (liftA2 mappend . f) (pure mempty)
 
@@ -22,7 +19,7 @@ pandocMathCompiler =
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
                           writerExtensions = newExtensions,
-                          writerHTMLMathMethod = MathJax mathJaxURL }
+                          writerHTMLMathMethod = MathJax "" }
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
 
 pandocLatexCompiler :: Compiler (Item String) 
@@ -32,7 +29,7 @@ pandocLatexCompiler =
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
                             writerExtensions = newExtensions,
-                            writerHTMLMathMethod = MathJax mathJaxURL }
+                            writerHTMLMathMethod = MathJax "" }
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
 
 postCtx :: Context String
@@ -43,7 +40,7 @@ postCtx =
 matchMathRules ::  Identifier -> Identifier -> Pattern -> Rules ()
 matchMathRules temp1 temp2 pattern = match pattern $ do
     route $ setExtension "html"
-    compile $ pandocCompiler
+    compile $ pandocMathCompiler
         >>= loadAndApplyTemplate temp1 postCtx
         >>= loadAndApplyTemplate temp2 postCtx
         >>= relativizeUrls
@@ -51,74 +48,76 @@ matchMathRules temp1 temp2 pattern = match pattern $ do
 matchNotes = matchMathRules "templates/notes.html" "templates/default.html"
 
 main :: IO ()
-main = hakyll $ do
-    match "images/*" $ do
-        route   idRoute
-        compile copyFileCompiler
+main = do
+    print "test"
+    hakyll $ do
+        match "images/*" $ do
+            route   idRoute
+            compile copyFileCompiler
 
-    match "css/*" $ do
-        route   idRoute
-        compile compressCssCompiler
+        match "css/*" $ do
+            route   idRoute
+            compile compressCssCompiler
 
-    match (fromList ["about.rst", "contact.markdown"]) $ do
-        route   $ setExtension "html"
-        compile $ pandocMathCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
-
-    matchNotes "notes/*.tex"
-        
-    match "posts/*" $ do
-        route $ setExtension "html"
-        compile $ pandocMathCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
-
-    create ["post-archive.html"] $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
-                    defaultContext
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/post-archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+        match (fromList ["about.rst", "contact.markdown"]) $ do
+            route   $ setExtension "html"
+            compile $ pandocMathCompiler
+                >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
 
-    create ["notes-archive.html"] $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "notes/*"
-            let archiveCtx =
-                    listField "notes" postCtx (return posts) `mappend`
-                    constField "title" "Notes"            `mappend`
-                    defaultContext
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/notes-archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+        matchNotes "notes/*.tex"
+
+        match "posts/*" $ do
+            route $ setExtension "html"
+            compile $ pandocMathCompiler
+                >>= loadAndApplyTemplate "templates/post.html"    postCtx
+                >>= loadAndApplyTemplate "templates/default.html" postCtx
                 >>= relativizeUrls
 
-    match "index.html" $ do
-        route idRoute
-        compile $ do
-            notes <- recentFirst =<< loadAll "notes/*"
-            let indexCtx =
-                    listField "notes" postCtx (return notes) `mappend`
-                    constField "title" "Home"                `mappend`
-                    defaultContext
+        create ["post-archive.html"] $ do
+            route idRoute
+            compile $ do
+                posts <- recentFirst =<< loadAll "posts/*"
+                let archiveCtx =
+                        listField "posts" postCtx (return posts) `mappend`
+                        constField "title" "Archives"            `mappend`
+                        defaultContext
+                makeItem ""
+                    >>= loadAndApplyTemplate "templates/post-archive.html" archiveCtx
+                    >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                    >>= relativizeUrls
 
-            posts <- recentFirst =<< loadAll "posts/*"
-            let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
-                    defaultContext
+        create ["notes-archive.html"] $ do
+            route idRoute
+            compile $ do
+                posts <- recentFirst =<< loadAll "notes/*"
+                let archiveCtx =
+                        listField "notes" postCtx (return posts) `mappend`
+                        constField "title" "Notes"            `mappend`
+                        defaultContext
+                makeItem ""
+                    >>= loadAndApplyTemplate "templates/notes-archive.html" archiveCtx
+                    >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                    >>= relativizeUrls
 
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                >>= relativizeUrls
+        match "index.html" $ do
+            route idRoute
+            compile $ do
+                notes <- recentFirst =<< loadAll "notes/*"
+                let indexCtx =
+                        listField "notes" postCtx (return notes) `mappend`
+                        constField "title" "Home"                `mappend`
+                        defaultContext
 
-    match "templates/*" $ compile templateCompiler
+                posts <- recentFirst =<< loadAll "posts/*"
+                let indexCtx =
+                        listField "posts" postCtx (return posts) `mappend`
+                        constField "title" "Home"                `mappend`
+                        defaultContext
+
+                getResourceBody
+                    >>= applyAsTemplate indexCtx
+                    >>= loadAndApplyTemplate "templates/default.html" indexCtx
+                    >>= relativizeUrls
+
+        match "templates/*" $ compile templateCompiler
