@@ -80,7 +80,7 @@ main = do
                 posts <- recentFirst =<< loadAll "posts/*"
                 let archiveCtx =
                         listField "posts" postCtx (return posts) `mappend`
-                        constField "title" "Archives"            `mappend`
+                        constField "title" "archives"            `mappend`
                         defaultContext
                 makeItem ""
                     >>= loadAndApplyTemplate "templates/post-archive.html" archiveCtx
@@ -93,7 +93,7 @@ main = do
                 posts <- recentFirst =<< loadAll "notes/*"
                 let archiveCtx =
                         listField "notes" postCtx (return posts) `mappend`
-                        constField "title" "Notes"            `mappend`
+                        constField "title" "notes"            `mappend`
                         defaultContext
                 makeItem ""
                     >>= loadAndApplyTemplate "templates/notes-archive.html" archiveCtx
@@ -106,13 +106,13 @@ main = do
                 notes <- recentFirst =<< loadAll "notes/*"
                 let indexCtx =
                         listField "notes" postCtx (return notes) `mappend`
-                        constField "title" "Home"                `mappend`
+                        constField "title" "new"                `mappend`
                         defaultContext
 
                 posts <- recentFirst =<< loadAll "posts/*"
                 let indexCtx =
                         listField "posts" postCtx (return posts) `mappend`
-                        constField "title" "Home"                `mappend`
+                        constField "title" "new"                `mappend`
                         defaultContext
 
                 getResourceBody

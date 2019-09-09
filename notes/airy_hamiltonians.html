@@ -12,23 +12,19 @@
     <body>
         <div id="header">
             <div id="navigation">
-                <a href="../index.html">Home</a>
-                <!--<a href="/about.html">About</a>-->
-                <!--<a href="/contact.html">Contact</a>-->
-                <a href="../post-archive.html">Archive</a>
-                <a href="../notes-archive.html">Notes</a>
+                <a href="../index.html">new</a>
+                <a>/</a>
+                <a href="../post-archive.html">archive</a>
+                <a>/</a>
+                <a href="../notes-archive.html">notes</a>
             </div>
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round"></div>
-                </label>
-            </div>
+            <button class="theme-switch-button" onclick="toggleTheme(this)">&LT;*&GT;</button>
         </div>
 
-        <div id="content">
-            <h1>Airy Hamiltonians</h1>
-            
+        <div id="body-content">
+            <div id="content">
+                    <!--<h1>Airy Hamiltonians</h1>-->
+                    <h1>Airy Hamiltonians</h1>
 
 
 <div class="info">
@@ -118,9 +114,32 @@
 2    \end{aligned}\]</span> Focusing on the terms which can give a constant <span class="math display">\[-\hbar  a_{irs} c_j^{tu} \left( \delta_u^r \delta_t^s  + \delta^r_t \delta_u^s \right) = -2 \, \hbar \,  a_{ist} \, c_j^{st}.\]</span> So the other term will be <span class="math inline">\(2 \, \hbar \,  a_{jst} \, c_i^{st}\)</span>. This gives an expression relating <span class="math inline">\(\varepsilon\)</span> to the other tensors <span class="math display">\[2 \left( a_{jst} \, c_i^{st} - a_{ist} \, c_j^{st} \right) = g_{ij}^k \varepsilon_k.\]</span></p>
 
 
+
+            </div>
         </div>
     </body>
     <script type="text/javascript">
-    const toggleSwitch=document.querySelector('.theme-switch input[type="checkbox"]');function switchTheme(e){e.target.checked?(document.documentElement.setAttribute("data-theme","dark"),localStorage.setItem("theme","dark")):(document.documentElement.setAttribute("data-theme","light"),localStorage.setItem("theme","light"))}toggleSwitch.addEventListener("change",switchTheme,!1);const currentTheme=localStorage.getItem("theme")?localStorage.getItem("theme"):null;currentTheme&&(document.documentElement.setAttribute("data-theme",currentTheme),"dark"===currentTheme&&(toggleSwitch.checked=!0));
+        
+        function toggleTheme (e) {
+            if (e.textContent == '<*>') {
+                e.textContent = '<O>';
+                document.documentElement.setAttribute("data-theme","dark");
+                localStorage.setItem("theme","dark");
+            } else {
+                e.textContent = '<*>';
+                document.documentElement.setAttribute("data-theme","light");
+                localStorage.setItem("theme","light");
+            }
+        };
+        
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+        
+        if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                document.getElementsByClassName("theme-switch-button")[0].textContent = '<O>';
+            }
+        };
+
     </script>
 </html>
