@@ -18,6 +18,12 @@
                 <a href="../post-archive.html">Archive</a>
                 <a href="../notes-archive.html">Notes</a>
             </div>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
         </div>
 
         <div id="content">
@@ -53,18 +59,18 @@
                                      &amp;= - 2 \, a_{jis} \, x^s,
     \end{aligned}\]</span> by symmetry of <span class="math inline">\(a\)</span>. So this will also vanish in <span class="math inline">\(\{ H_i, H_j \}\)</span>.</p>
 <p>The second term <span class="math display">\[\begin{aligned}
-        -2\,\{  y_i , b_{jr}^s x^r y_s \} &amp;= -2 \, b_{jr}^s \{y_i, x^r y_s\} \\
-                                          &amp;= -2 \, b_{jr}^s \left( \{y_i, x^r\}  y_s + x^r \{ y_i ,y_i\} \right) \\
-                                          &amp; = -2 \, b_{ji}^s \, y_s
+        -2\,\{  y_i , b_{jr}^s x^r y_s \} &amp;= -2 \, b_{jr}^s \{y_i, x^r y_s\} ,\\
+                                          &amp;= -2 \, b_{jr}^s \left( \{y_i, x^r\}  y_s + x^r \{ y_i ,y_i\} \right) ,\\
+                                          &amp; = -2 \, b_{ji}^s \, y_s.
     \end{aligned}\]</span> The other term gives <span class="math inline">\(2 b_{ij}^s y_s\)</span>. Since <span class="math inline">\(\{ H_i , H_j \} = g_{ij}^k H_k\)</span>, this gives <span class="math inline">\(g_{ij}^k = 2 \left( b_{ji}^k - b_{i j}^k\right)\)</span> which matches Kontsevich and Soibelman’s calculation.</p>
 <p>For the third term <span> <span class="math display">\[\begin{aligned}
         2 \, \{ a_{irs} x^r x^s, b_{jt}^{u} x^t y_u \} &amp;= 2 \,a_{irs}\,  b_{jt}^u \{ x^r x^s, x^t y_u \} ,\\
                                                        &amp;= 2 \,a_{irs}\,  b_{jt}^u  \left( \{  x^r x^s, x^t \} y_u +  x^t \{ x^r x^s , y_u \} \right),\\
                                                        &amp;= 2\, a_{irs} \, b_{jt}^u \, x^t \left( \{ x^r  , y_u \} x^s + x^r \{ x^s, y_u \}  \right),\\
                                                        &amp;= -2\, a_{irs} \, b_{jt}^u \, x^t \left( \delta^{r}_u x^s + x^r \delta^s_u \right),\\
-                                                       &amp;= -2 \, a_{irs} \, b_{jt}^r x^t x^s - 2 \, a_{irs} \, b_{jt}^s x^t x^r\\
-                                                       &amp;= -2 \left( a_{ikt} \, b_{js}^k  + \, a_{itk} \, b_{js}^k \right) x^s x^t\\
-                                                       &amp;= -4 \, a_{ikt} \, b_{js}^k  \, x^s x^t
+                                                       &amp;= -2 \, a_{irs} \, b_{jt}^r x^t x^s - 2 \, a_{irs} \, b_{jt}^s x^t x^r,\\
+                                                       &amp;= -2 \left( a_{ikt} \, b_{js}^k  + \, a_{itk} \, b_{js}^k \right) x^s x^t,\\
+                                                       &amp;= -4 \, a_{ikt} \, b_{js}^k  \, x^s x^t.
     \end{aligned}\]</span></span> So there is also a <span class="math inline">\(4 \,a_{jks}\,  b_{it}^k \, x^s \, x^t\)</span> term.</p>
 <p>The fourth term <span> <span class="math display">\[\begin{aligned}
         \{ a_{irs} x^r x^s, c_{j}^{t u} y_t y_u \} &amp; = a_{irs} \,c_j^{tu} \{ x^r x^s, y_t y_u \},\\
@@ -73,7 +79,7 @@
                                                    &amp;= -a_{irs} \, c_j^{tu} \left(    y_u x^s \delta^r_t + y_t x^s \delta^r_u  + x^r y_u \delta^s_t  + x^r y_t \delta^s_u  \right) ,\\ 
                                                    &amp;= - \left( a_{irs} \, c_j^{ru} x^s y_u  +  a_{irs} \, c_j^{tr} x^s y_t +  a_{irt} \, c_j^{tu} x^r y_u   +  a_{irs} \, c_j^{ts} x^r y_t   \right) ,\\
                                                     &amp;= - \left( a_{iks} \, c_j^{kt} x^s y_t  +  a_{iks} \, c_j^{tk}  x^s  y_t  +  a_{isk} \, c_j^{kt} x^s y_t  +  a_{isk} \, c_j^{tk} x^s y_t   \right) ,\\
-                                                    &amp;= - 4\, a_{jks}\, c_i^{k t} \,x^s\, y_t
+                                                    &amp;= - 4\, a_{jks}\, c_i^{k t} \,x^s\, y_t.
     \end{aligned}\]</span></span> Likewise there is a <span class="math inline">\(4\, a_{jrs}\, c_i^{r t} \,x^s\, y_t\)</span>.</p>
 <p>The fifth term should give <span class="math inline">\(y_r\, y_t\)</span> like terms. <span> <span class="math display">\[\begin{aligned}
         2 \{ b_{ir}^s x^r y_s , c_{j}^{t u} y_t y_u \} &amp;= 2 \,b_{ir}^s \,c_j^{tu} \{ x^r y_s , y_t \,y_u\} ,\\
@@ -82,11 +88,12 @@
                                                        &amp;= -2 \,b_{ir}^s \,c_j^{tu} \, y_s \left( \delta^r_t y_u + y_t \delta^r_u \right) ,\\
                                                        &amp;= -4 b_{ik}^s c_j^{kt} y_s y_t,
     \end{aligned}\]</span> </span> by symmetry of <span class="math inline">\(c\)</span>. This also gives a <span class="math inline">\(4 b_{jr}^s c_i^{rt} y_s y_t\)</span> term.</p>
-<p>Finally <span> <span class="math display">\[\begin{aligned}
-        4 \{ b_{ir}^s x^r y_s ,b_{jt}^u x^t y_u\}&amp; = 4 b_{ir}^t b_{jt}^s x^r y_s - 4 b_{ir}^s b_{jt}^r x^t y_s \\
-                                                 &amp;= 4 \left(   b_{is}^k b_{jk}^t  - b_{ik}^t b_{js}^k \right) x^s y_t \\
-    \end{aligned}\]</span> </span> Assembling the results <span class="math display">\[\begin{aligned}
- \{H_i, H_j\} =&amp; - 2\left(  b_{ji}^k - b_{ij}^k \right) y_k  +  4 \left( {\color{blue} a_{jrs} b_{it}^r -  a_{irs} b_{jt}^r } \right)x^s x^t \\
+<p>Finally <span style="color: cyan"> <span class="math display">\[\begin{aligned}
+        4 \{ b_{ir}^s x^r y_s ,b_{jt}^u x^t y_u\}&amp; = 4 b_{ir}^t b_{jt}^s x^r y_s - 4 b_{ir}^s b_{jt}^r x^t y_s ,\\
+                                               &amp;= 4 \left(   b_{is}^k b_{jk}^t  - b_{ik}^t b_{js}^k \right) x^s y_t .\\
+    \end{aligned}\]</span> </span></p>
+<p>Assembling the results <span class="math display">\[\begin{aligned}
+ \{H_i, H_j\} =&amp; - 2\left(  b_{ji}^k - b_{ij}^k \right) y_k  +  4 \left( {\color{blue} a_{jrs} b_{it}^r -  a_{irs} b_{jt}^r } \right)x^s x^t ,\\
                                 &amp;+ 4\left( { \color{purple}a_{jrs} c_i^{r t} -  a_{irs} c_j^{r t}} +  {\color{cyan} b_{is}^k b_{jk}^t  -  b_{ik}^t b_{js}^k }\right) x^s y_t + 4 \left( {\color{red} b_{jr}^s c_i^{rt}  - b_{ir}^s c_j^{rt} }\right) y_s y_t,  
     \end{aligned}\]</span></p>
 <p>which is meant to match <span class="math display">\[g_{ij}^k H_k = - \left( g_{ij}^k  \right) y_k + \left( g_{ij}^k  a_{kst} \right) x^s x^t + \left( 2 g_{ij}^k b_{k s t}^k \right) x^s y_t + \left( g_{ij}^k c_k^{st}\right) y^s y^t.\]</span></p>
@@ -104,13 +111,35 @@
 <li><p><span class="math inline">\([ a_{irs} x^r x^s ,   \hbar^2 c_j^{tu} \partial_t \partial_u ]\)</span></p></li>
 </ul>
 <p>Therefore <span class="math display">\[\begin{aligned}
-          [ a_{irs} x^r x^s ,   \hbar^2 c_j^{tu} \partial_t \partial_u ] (f) &amp;=  \hbar a_{irs} c_j^{tu} \left( x^r x^s \partial_t \partial_u - \partial_t \partial_u x^r x^s \right)(f) \\
-                                                                             &amp;= \hbar a_{irs} c_j^{tu} \left( x^r x^s \partial_t \partial_u (f) - \partial_t ( \delta_u^r x^s f + x^r \delta_u^s f + x^r x^s \partial_u (f)  ) \right)\\
-                                                                            &amp;= \hbar a_{irs} c_j^{tu} \big( x^r x^s \partial_t \partial_u (f) - \delta_u^r \delta_t^s f - \delta_u^r x^s \partial_t (f)  - \delta^r_t \delta_u^s f - x^r \delta_u^s \partial_t(f) \\
-                                                                            &amp;- \delta_t^r x^s \partial_u (f)  - x^r \delta^s_t \partial_u (f) - x^r x^s \partial_t \partial_u (f) \big)
+          [ a_{irs} x^r x^s ,   \hbar^2 c_j^{tu} \partial_t \partial_u ] (f) &amp;=  \hbar a_{irs} c_j^{tu} \left( x^r x^s \partial_t \partial_u - \partial_t \partial_u x^r x^s \right)(f) ,\\
+                                                                             &amp;= \hbar a_{irs} c_j^{tu} \left( x^r x^s \partial_t \partial_u (f) - \partial_t ( \delta_u^r x^s f + x^r \delta_u^s f + x^r x^s \partial_u (f)  ) \right),\\
+                                                                            &amp;= \hbar a_{irs} c_j^{tu} \big( x^r x^s \partial_t \partial_u (f) - \delta_u^r \delta_t^s f - \delta_u^r x^s \partial_t (f)  - \delta^r_t \delta_u^s f - x^r \delta_u^s \partial_t(f) ,\\
+                                                                            &amp;- \delta_t^r x^s \partial_u (f)  - x^r \delta^s_t \partial_u (f) - x^r x^s \partial_t \partial_u (f) \big).
 2    \end{aligned}\]</span> Focusing on the terms which can give a constant <span class="math display">\[-\hbar  a_{irs} c_j^{tu} \left( \delta_u^r \delta_t^s  + \delta^r_t \delta_u^s \right) = -2 \, \hbar \,  a_{ist} \, c_j^{st}.\]</span> So the other term will be <span class="math inline">\(2 \, \hbar \,  a_{jst} \, c_i^{st}\)</span>. This gives an expression relating <span class="math inline">\(\varepsilon\)</span> to the other tensors <span class="math display">\[2 \left( a_{jst} \, c_i^{st} - a_{ist} \, c_j^{st} \right) = g_{ij}^k \varepsilon_k.\]</span></p>
 
 
         </div>
     </body>
+    <script type="text/javascript">
+            const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+            function switchTheme(e) {
+                if (e.target.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark'); //add this
+                }
+                else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light'); //add this
+                }    
+            } 
+            toggleSwitch.addEventListener('change', switchTheme, false);
+            const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+            if (currentTheme) {
+                document.documentElement.setAttribute('data-theme', currentTheme);
+
+                if (currentTheme === 'dark') {
+                    toggleSwitch.checked = true;
+                }
+            }
+    </script>
 </html>

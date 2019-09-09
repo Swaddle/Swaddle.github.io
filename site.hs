@@ -19,7 +19,7 @@ pandocMathCompiler =
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
                           writerExtensions = newExtensions,
-                          writerHTMLMathMethod = Katex "" }
+                          writerHTMLMathMethod = KaTeX "" }
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
 
 pandocLatexCompiler :: Compiler (Item String) 
@@ -29,7 +29,7 @@ pandocLatexCompiler =
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
                             writerExtensions = newExtensions,
-                            writerHTMLMathMethod = Katex "" }
+                            writerHTMLMathMethod = KaTeX "" }
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
 
 postCtx :: Context String
