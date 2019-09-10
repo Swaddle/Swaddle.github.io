@@ -18,7 +18,7 @@
                 <a>/</a>
                 <a href="./notes-archive.html">notes</a>
             </div>
-            <button class="theme-switch-button" onclick="toggleTheme(this)">&LT;*&GT;</button>
+            <button class="theme-switch-button" onclick="toggleTheme(this,event)">&LT;*&GT;</button>
         </div>
 
         <div id="body-content">
@@ -28,15 +28,16 @@
             </div>
         </div>
     </body>
+    <script src="./js/default.js"></script>
     <script type="text/javascript">
-        
-        function toggleTheme (e) {
-            if (e.textContent == '<*>') {
-                e.textContent = '<O>';
+        function toggleTheme (obj,event) {
+            event.preventDefault();
+            if (obj.textContent == '<*>') {
+                obj.textContent = '<O>';
                 document.documentElement.setAttribute("data-theme","dark");
                 localStorage.setItem("theme","dark");
             } else {
-                e.textContent = '<*>';
+                obj.textContent = '<*>';
                 document.documentElement.setAttribute("data-theme","light");
                 localStorage.setItem("theme","light");
             }
@@ -50,6 +51,5 @@
                 document.getElementsByClassName("theme-switch-button")[0].textContent = '<O>';
             }
         };
-
     </script>
 </html>

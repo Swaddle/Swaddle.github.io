@@ -7,6 +7,9 @@ import Control.Applicative
 import Text.Pandoc
 import Text.Pandoc.Options
 
+import qualified Data.ByteString.Lazy.Char8 as C8
+import           Text.Jasmine
+
 foldMapA :: (Applicative f, Foldable t, Monoid m) => (a -> f m) -> t a -> f m
 foldMapA f = foldr (liftA2 mappend . f) (pure mempty)
 
@@ -47,6 +50,12 @@ matchMathRules temp1 temp2 pattern = match pattern $ do
 
 matchNotes = matchMathRules "templates/notes.html" "templates/default.html"
 
+compressJsCompiler :: Compiler (Item String)
+compressJsCompiler = do
+    s <- getResourceString
+    let minifyJS = C8.unpack . minify . C8.pack . itemBody
+    return $ itemSetBody (minifyJS s) s
+
 main :: IO ()
 main = do
     print "test"
@@ -58,6 +67,10 @@ main = do
         match "css/*" $ do
             route   idRoute
             compile compressCssCompiler
+        
+        match "js/*" $ do
+            route   idRoute
+            compile compressJsCompiler
 
         match (fromList ["about.rst", "contact.markdown"]) $ do
             route   $ setExtension "html"

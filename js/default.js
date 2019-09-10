@@ -1,0 +1,1 @@
+"use strict";const foo=5
