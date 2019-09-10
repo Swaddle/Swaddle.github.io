@@ -12,7 +12,7 @@
     <body>
         <div id="header">
             <div id="navigation">
-                <a href="../index.html">new</a>
+                <a href="../">new</a>
                 <a>/</a>
                 <a href="../post-archive.html">archive</a>
                 <a>/</a>
@@ -119,27 +119,4 @@
         </div>
     </body>
     <script src="../js/default.js"></script>
-    <script type="text/javascript">
-        function toggleTheme (obj,event) {
-            event.preventDefault();
-            if (obj.textContent == '<*>') {
-                obj.textContent = '<O>';
-                document.documentElement.setAttribute("data-theme","dark");
-                localStorage.setItem("theme","dark");
-            } else {
-                obj.textContent = '<*>';
-                document.documentElement.setAttribute("data-theme","light");
-                localStorage.setItem("theme","light");
-            }
-        };
-        
-        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-        
-        if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-            if (currentTheme === 'dark') {
-                document.getElementsByClassName("theme-switch-button")[0].textContent = '<O>';
-            }
-        };
-    </script>
 </html>
