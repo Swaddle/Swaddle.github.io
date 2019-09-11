@@ -96,18 +96,18 @@
 </section>
 <section id="quantum-case" class="level1">
 <h1>Quantum case</h1>
-<p>Let <span class="math inline">\(x^i \rightarrow x^i\)</span> and <span class="math inline">\(y_i \rightarrow \hbar \partial_i\)</span>. This gives a Lie bracket <span class="math inline">\([f,g] = \frac{1}{\hbar} \left( f g - g f \right)\)</span>. So <span class="math inline">\([ \hbar \partial_i , x^j ] = \delta_i^j\)</span> and <span class="math inline">\([ x^j, \hbar \partial_i ] = - \delta_i^j\)</span>.</p>
-<p>Introduce the quantised Hamiltonians; <span class="math display">\[\widehat{H}_i = -\hbar \partial_i + a_{ijk} x^i x^j + 2 \hbar b_{ij}^k x^j \partial_k + \hbar^2 c_i^{jk} \partial_j \partial_k + \hbar \varepsilon_i.\]</span></p>
+<p>Let <span class="math inline">\(x^i \rightarrow x^i\)</span> and <span class="math inline">\(y_i \rightarrow \hbar \,\partial_i\)</span>. This gives a Lie bracket <span class="math inline">\([f,g] = \frac{1}{\hbar} \left( f g - g f \right)\)</span>. So <span class="math inline">\([ \hbar \,\partial_i , x^j ] = \delta_i^j\)</span> and <span class="math inline">\([ x^j, \hbar\, \partial_i ] = - \delta_i^j\)</span>.</p>
+<p>Introduce the quantised Hamiltonians; <span class="math display">\[\widehat{H}_i = -\hbar\, \partial_i + a_{ijk} x^i x^j + 2 \,\hbar \,b_{ij}^k x^j \partial_k + \hbar^2 \,c_i^{jk} \partial_j \partial_k + \hbar\, \varepsilon_i.\]</span></p>
 <p>The calculation of <span class="math inline">\([\widehat{H}_i,\widehat{H}_j]= g_{ij}^k \widehat{H}_k\)</span> is very similar to the classical case, the only difference is from terms involving an <span class="math inline">\(\varepsilon\)</span>. <span class="math inline">\(\varepsilon\)</span> is determined by terms that give a non-symmetric constant (so all the <span class="math inline">\(x^i\)</span> and <span class="math inline">\(\partial_j\)</span> vanish) in the Lie bracket. This only happens with equal numbers of <span class="math inline">\(\partial\)</span> and <span class="math inline">\(x\)</span> terms, so there is only one expression to check</p>
 <ul>
-<li><p><span class="math inline">\([ a_{irs} x^r x^s ,   \hbar^2 c_j^{tu} \partial_t \partial_u ]\)</span></p></li>
+<li><p><span class="math inline">\([ a_{irs} x^r x^s ,   \hbar^2 \,c_j^{tu} \partial_t \partial_u ]\)</span></p></li>
 </ul>
 <p>Therefore <span class="math display">\[\begin{aligned}
-          [ a_{irs} x^r x^s ,   \hbar^2 c_j^{tu} \partial_t \partial_u ] (f) &amp;=  \hbar a_{irs} c_j^{tu} \left( x^r x^s \partial_t \partial_u - \partial_t \partial_u x^r x^s \right)(f) ,\\
-                                                                             &amp;= \hbar a_{irs} c_j^{tu} \left( x^r x^s \partial_t \partial_u (f) - \partial_t ( \delta_u^r x^s f + x^r \delta_u^s f + x^r x^s \partial_u (f)  ) \right),\\
-                                                                            &amp;= \hbar a_{irs} c_j^{tu} \big( x^r x^s \partial_t \partial_u (f) - \delta_u^r \delta_t^s f - \delta_u^r x^s \partial_t (f)  - \delta^r_t \delta_u^s f - x^r \delta_u^s \partial_t(f) ,\\
+          [ a_{irs} x^r x^s ,   \hbar^2\, c_j^{tu} \partial_t \partial_u ] (f) &amp;=  \hbar \,a_{irs} c_j^{tu} \left( x^r x^s \partial_t \partial_u - \partial_t \partial_u x^r x^s \right)(f) ,\\
+                                                                             &amp;= \hbar\, a_{irs} c_j^{tu} \left( x^r x^s \partial_t \partial_u (f) - \partial_t ( \delta_u^r x^s f + x^r \delta_u^s f + x^r x^s \partial_u (f)  ) \right),\\
+                                                                            &amp;= \hbar\, a_{irs} c_j^{tu} \big( x^r x^s \partial_t \partial_u (f) - \delta_u^r \delta_t^s f - \delta_u^r x^s \partial_t (f)  - \delta^r_t \delta_u^s f - x^r \delta_u^s \partial_t(f) ,\\
                                                                             &amp;- \delta_t^r x^s \partial_u (f)  - x^r \delta^s_t \partial_u (f) - x^r x^s \partial_t \partial_u (f) \big).
-2    \end{aligned}\]</span> Focusing on the terms which can give a constant <span class="math display">\[-\hbar  a_{irs} c_j^{tu} \left( \delta_u^r \delta_t^s  + \delta^r_t \delta_u^s \right) = -2 \, \hbar \,  a_{ist} \, c_j^{st}.\]</span> So the other term will be <span class="math inline">\(2 \, \hbar \,  a_{jst} \, c_i^{st}\)</span>. This gives an expression relating <span class="math inline">\(\varepsilon\)</span> to the other tensors <span class="math display">\[2 \left( a_{jst} \, c_i^{st} - a_{ist} \, c_j^{st} \right) = g_{ij}^k \varepsilon_k.\]</span></p>
+2    \end{aligned}\]</span> Focusing on the terms which can give a constant <span class="math display">\[-\hbar  \,a_{irs} c_j^{tu} \left( \delta_u^r \delta_t^s  + \delta^r_t \delta_u^s \right) = -2 \, \hbar \,  a_{ist} \, c_j^{st}.\]</span> So the other term will be <span class="math inline">\(2 \, \hbar \,  a_{jst} \, c_i^{st}\)</span>. This gives an expression relating <span class="math inline">\(\varepsilon\)</span> to the other tensors <span class="math display">\[2 \left( a_{jst} \, c_i^{st} - a_{ist} \, c_j^{st} \right) = g_{ij}^k \varepsilon_k.\]</span></p>
 </section>
 
 
