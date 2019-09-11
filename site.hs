@@ -22,7 +22,7 @@ pandocMathCompiler =
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
                           writerExtensions = newExtensions,
-                          writerHTMLMathMethod = KaTeX "" }
+                          writerHTMLMathMethod = KaTeX ""}
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
 
 pandocLatexCompiler :: Compiler (Item String) 
@@ -32,7 +32,9 @@ pandocLatexCompiler =
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
                             writerExtensions = newExtensions,
-                            writerHTMLMathMethod = KaTeX "" }
+                            writerHTMLMathMethod = KaTeX "",
+                            writerTableOfContents = True,
+                            writerSectionDivs = True}
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
 
 postCtx :: Context String
@@ -43,7 +45,7 @@ postCtx =
 matchMathRules ::  Identifier -> Identifier -> Pattern -> Rules ()
 matchMathRules temp1 temp2 pattern = match pattern $ do
     route $ setExtension "html"
-    compile $ pandocMathCompiler
+    compile $ pandocLatexCompiler
         >>= loadAndApplyTemplate temp1 postCtx
         >>= loadAndApplyTemplate temp2 postCtx
         >>= relativizeUrls
@@ -77,7 +79,7 @@ main = do
             compile $ pandocMathCompiler
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
-
+        
         matchNotes "notes/*.tex"
 
         match "posts/*" $ do

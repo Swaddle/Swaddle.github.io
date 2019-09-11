@@ -3,36 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>archives</title>
+        <title>Theorem environment test</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css" integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js" integrity="sha384-JiKN5O8x9Hhs/UE5cT5AAJqieYlOZbGT3CHws/y97o3ty4R7/O5poG9F3JoiOYw1" crossorigin="anonymous"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
-        <link rel="stylesheet" type="text/css" href="./css/default.css" />
+        <link rel="stylesheet" type="text/css" href="../css/default.css" />
     </head>
     <body>
         <div id="header">
             <div id="navigation">
-                <a href="./">new</a>
+                <a href="../">new</a>
                 <a>/</a>
-                <a href="./post-archive.html">archive</a>
+                <a href="../post-archive.html">archive</a>
                 <a>/</a>
-                <a href="./notes-archive.html">notes</a>
+                <a href="../notes-archive.html">notes</a>
             </div>
             <button class="theme-switch-button" onclick="toggleTheme(this,event)">&LT;*&GT;</button>
         </div>
 
         <div id="content">                
-            Here you can find all my previous posts:
-<ul>
+            <h1>Theorem environment test</h1>
+
+<div class="info">
+    Posted on 2019, September 10
     
-        <li>
-            <a href="./posts/2019-07-09-hello.html">Hello</a> 2019, July  9
-        </li>
+        by Michael Swaddle
     
-</ul>
+
+    
+    
+</div>
+
+<section id="test" class="level1">
+<h1>Test</h1>
+<section id="test-1" class="level2">
+<h2>test</h2>
+
+<div id="Euc1">
+<p><span><strong><span>Theorem </span></strong></span> (Euc1). <em>There is no largest prime.</em></p>
+</div>
+<p><strong>Proof</strong> : <em>Exercise for the reader.</em></p>
+<p>By <a href="#Euc1">(Euc1)</a> there are infinitely many primes.</p>
+</section>
+</section>
+
 
 
         </div>
-    <script src="./js/default.js"></script>
+    <script src="../js/default.js"></script>
     </body>
 </html>
