@@ -22,7 +22,7 @@ pandocMathCompiler =
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
                           writerExtensions = newExtensions,
-                          writerHTMLMathMethod = KaTeX ""}
+                          writerHTMLMathMethod = MathJax ""}
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
 
 pandocLatexCompiler :: Compiler (Item String) 
@@ -32,7 +32,7 @@ pandocLatexCompiler =
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
                             writerExtensions = newExtensions,
-                            writerHTMLMathMethod = KaTeX "",
+                            writerHTMLMathMethod = MathJax "",
                             writerTableOfContents = True,
                             writerSectionDivs = True}
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
@@ -60,7 +60,6 @@ compressJsCompiler = do
 
 main :: IO ()
 main = do
-    print "test"
     hakyll $ do
         match "images/*" $ do
             route   idRoute
