@@ -15,9 +15,7 @@ foldMapA f = foldr (liftA2 mappend . f) (pure mempty)
 
 pandocMathCompiler :: Compiler (Item String) 
 pandocMathCompiler =
-    let mathExtensions = [Ext_tex_math_dollars, 
-                          Ext_tex_math_double_backslash,
-                          Ext_latex_macros]
+    let mathExtensions = [Ext_tex_math_dollars, Ext_tex_math_double_backslash, Ext_latex_macros]
         defaultExtensions = writerExtensions defaultHakyllWriterOptions
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
@@ -27,7 +25,7 @@ pandocMathCompiler =
 
 pandocLatexCompiler :: Compiler (Item String) 
 pandocLatexCompiler =
-    let mathExtensions = [Ext_latex_macros]
+    let mathExtensions = [Ext_tex_math_dollars, Ext_tex_math_double_backslash, Ext_latex_macros]
         defaultExtensions = writerExtensions defaultHakyllWriterOptions
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
@@ -37,6 +35,12 @@ pandocLatexCompiler =
                             writerSectionDivs = True}
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
 
+compressJsCompiler :: Compiler (Item String)
+compressJsCompiler = do
+    s <- getResourceString
+    let minifyJS = C8.unpack . minify . C8.pack . itemBody
+    return $ itemSetBody (minifyJS s) s
+    
 postCtx :: Context String
 postCtx =
     dateField "date" "%Y, %B %e" `mappend`
@@ -50,13 +54,7 @@ matchMathRules temp1 temp2 pattern = match pattern $ do
         >>= loadAndApplyTemplate temp2 postCtx
         >>= relativizeUrls
 
-matchNotes = matchMathRules "templates/notes.html" "templates/default.html"
-
-compressJsCompiler :: Compiler (Item String)
-compressJsCompiler = do
-    s <- getResourceString
-    let minifyJS = C8.unpack . minify . C8.pack . itemBody
-    return $ itemSetBody (minifyJS s) s
+matchNotes = matchMathRules "templates/notes.html" "templates/default.html" 
 
 main :: IO ()
 main = do
