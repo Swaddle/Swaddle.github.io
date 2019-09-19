@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Lie algebra cohomology and quantisation.</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css" integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js" integrity="sha384-JiKN5O8x9Hhs/UE5cT5AAJqieYlOZbGT3CHws/y97o3ty4R7/O5poG9F3JoiOYw1" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+        <link rel="stylesheet" type="text/css" href="../css/default.css" />
+    </head>
+    <body>
+        <div id="header">
+            <div id="navigation">
+                <a href="../">new</a>
+                <a>/</a>
+                <a href="../post-archive.html">archive</a>
+                <a>/</a>
+                <a href="../notes-archive.html">notes</a>
+            </div>
+            <button class="theme-switch-button" onclick="toggleTheme(this,event)">&LT;*&GT;</button>
+        </div>
+
+        <div id="content">                
+            <h1>Lie algebra cohomology and quantisation.</h1>
+<div class="info">
+    Posted on 2019, September 13
+    
+        by Michael Swaddle
+    
+</div>
+<p>This week we discussed how <span class="math inline">\(\varepsilon\)</span> corresponds to a 1-cocycle.</p>
+<p>Let <span class="math inline">\(\mathfrak{g} = V^*\)</span> be a Lie algebra. We are interested in the Lie algebra cohomology <span class="math display">\[H^1( \mathfrak{g}, \mathbf{k} )\]</span> We can use the Chevalley–Eilenberg complex, where the module is simply the underlying field. <span class="math display">\[\mathrm{Hom}(\wedge^1 \mathfrak{g},M) = \mathrm{Hom}(\mathfrak{g},\mathbb{k}).\]</span> $ V^* $ is <span class="math inline">\(V\)</span>. So <span class="math inline">\(\varepsilon\)</span> is a 1-cocycle.</p>
+<p>The derivative of a 1-cocycle is given by <span class="math display">\[d \varepsilon(x,y) = x \varepsilon(y) - y \varepsilon(x) -\varepsilon([x,y])\]</span> But the action of <span class="math inline">\(\mathbb{k}\)</span> is trivial so this reduces to <span class="math display">\[ d \varepsilon(x,y) = -\varepsilon([x,y])\]</span> This precisely matches the terms given by calculating the commutators of the <span class="math inline">\(\hat{H}_i\)</span> and matching the $ ()$ terms <span class="math display">\[ \frac{1}{\hbar}[\hat{H}_i,\hat{H}_j] = g_{ij}^k\hat{H}_k + c(\hat{H}_i,\hat{H}_j)\]</span> which gave $ 2(a_{irs} c_j^{rs} - a_{jrs} c_i^{rs} ) = g_{ik}^{k} $. Further <span class="math inline">\(c(\hat{H}_i,\hat{H}_j)) = 0\)</span> so this is a trivial extension. Note that the purpose was to choose <span class="math inline">\(\varepsilon_k\)</span> such that the equation with the <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> tensors hold.</p>
+<p>This is so the Lie algebra structure of the classical and quantum Hamiltonians coincide <span class="math display">\[ \frac{1}{\hbar}[\hat{H}_i,\hat{H}_j] = \{ H_i,H_j}|_{x^{\cdot} \rightarrow x^{\cdot}, y_\cdot \rightarrow \partial_\cdot } + \varepsilon\]</span></p>
+
+        </div>
+    <script src="../js/default.js"></script>
+    </body>
+</html>
