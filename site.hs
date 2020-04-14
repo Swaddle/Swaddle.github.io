@@ -15,7 +15,7 @@ foldMapA f = foldr (liftA2 mappend . f) (pure mempty)
 
 pandocMathCompiler :: Compiler (Item String) 
 pandocMathCompiler =
-    let mathExtensions = [Ext_tex_math_dollars, Ext_tex_math_double_backslash, Ext_latex_macros]
+    let mathExtensions = [Ext_latex_macros]
         defaultExtensions = writerExtensions defaultHakyllWriterOptions
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
@@ -25,7 +25,7 @@ pandocMathCompiler =
 
 pandocLatexCompiler :: Compiler (Item String) 
 pandocLatexCompiler =
-    let mathExtensions = [Ext_tex_math_dollars, Ext_tex_math_double_backslash, Ext_latex_macros]
+    let mathExtensions = [Ext_latex_macros]
         defaultExtensions = writerExtensions defaultHakyllWriterOptions
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
