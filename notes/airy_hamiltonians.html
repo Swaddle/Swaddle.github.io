@@ -29,31 +29,31 @@
     
 </div>
 
-<p>Let <span class="math inline">V</span> be a topological vector space with discrete topology. We reproduce the conditions on the tensors <span class="math inline">a \in V^* \otimes V^* \otimes V^*, b \in V \otimes V^* \otimes V^*</span> and <span class="math inline">c \in V \otimes V \otimes V^*</span> to give an Airy structure.</p>
+<p>Let <span class="math inline">\(V\)</span> be a topological vector space with discrete topology. We reproduce the conditions on the tensors <span class="math inline">\(a \in V^* \otimes V^* \otimes V^*, b \in V \otimes V^* \otimes V^*\)</span> and <span class="math inline">\(c \in V \otimes V \otimes V^*\)</span> to give an Airy structure.</p>
 <section id="classical-case" class="level1">
 <h1>Classical case</h1>
-<p>Let <span class="math display">H_i = -y_i + a_{ijk} x^i x^j + 2 b_{ij}^k x^j y_k + c_i^{jk} y^j y^k,</span> where <span class="math inline">a</span> and <span class="math inline">c</span> are symmetric under permutations of <span class="math inline">j,k</span>. Recall <span class="math inline">\{ y_i , x^j \} = \delta_i^j</span> is the only non vanishing Poisson bracket. So in <span class="math inline">\{ H_i, H_j \}</span>, there are possibly the following five nonzero terms (plus (-1) times a permutation <span class="math inline">i \leftrightarrow j</span>).</p>
+<p>Let <span class="math display">\[H_i = -y_i + a_{ijk} x^i x^j + 2 b_{ij}^k x^j y_k + c_i^{jk} y^j y^k,\]</span> where <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are symmetric under permutations of <span class="math inline">\(j,k\)</span>. Recall <span class="math inline">\(\{ y_i , x^j \} = \delta_i^j\)</span> is the only non vanishing Poisson bracket. So in <span class="math inline">\(\{ H_i, H_j \}\)</span>, there are possibly the following five nonzero terms (plus (-1) times a permutation <span class="math inline">\(i \leftrightarrow j\)</span>).</p>
 <ul>
-<li><p><span class="math inline">-\{  y_i, a_{jrs} x^r x^s \}</span></p></li>
-<li><p><span class="math inline">-2\,\{  y_i , b_{jr}^s x^r y_s \}</span></p></li>
-<li><p><span class="math inline">2 \, \{ a_{irs} x^r x^s, b_{jt}^{u} x^t y_u \}</span></p></li>
-<li><p><span class="math inline">\{ a_{irs} x^r x^s, c_{j}^{t u} y_t y_u \}</span></p></li>
-<li><p><span class="math inline">2 \{ b_{ir}^s x^r y_s , c_{j}^{t u} y_t y_u \}</span></p></li>
+<li><p><span class="math inline">\(-\{  y_i, a_{jrs} x^r x^s \}\)</span></p></li>
+<li><p><span class="math inline">\(-2\,\{  y_i , b_{jr}^s x^r y_s \}\)</span></p></li>
+<li><p><span class="math inline">\(2 \, \{ a_{irs} x^r x^s, b_{jt}^{u} x^t y_u \}\)</span></p></li>
+<li><p><span class="math inline">\(\{ a_{irs} x^r x^s, c_{j}^{t u} y_t y_u \}\)</span></p></li>
+<li><p><span class="math inline">\(2 \{ b_{ir}^s x^r y_s , c_{j}^{t u} y_t y_u \}\)</span></p></li>
 </ul>
-<p>Additionally we should check <span class="math inline">4 \{ b_{ir}^s x^r y_s ,b_{jt}^u x^t y_u\}</span>.</p>
-<p>The Poisson bracket satisfies Leibniz rule, so <span class="math inline">\{ f g  , h \}  = \{ f, h \} g + f \{g,h\}</span> and likewise <span class="math inline">\{ f , g h \} = \{ f,g\} h + g \{ f , h\}</span>.</p>
-<p>The first term <span class="math display">\begin{aligned}
+<p>Additionally we should check <span class="math inline">\(4 \{ b_{ir}^s x^r y_s ,b_{jt}^u x^t y_u\}\)</span>.</p>
+<p>The Poisson bracket satisfies Leibniz rule, so <span class="math inline">\(\{ f g  , h \}  = \{ f, h \} g + f \{g,h\}\)</span> and likewise <span class="math inline">\(\{ f , g h \} = \{ f,g\} h + g \{ f , h\}\)</span>.</p>
+<p>The first term <span class="math display">\[\begin{aligned}
       -\{  y_i, a_{jrs} x^r x^s \}   &amp; = -a_{jrs} \{ y_i, x^r x^s  \} ,\\
                                      &amp;= -a_{jrs} \left( \{ y_i, x^r\} x^s + x^r \{ y_i, x^s \} \right) ,\\ 
                                      &amp;= - a_{jrs} \left( \delta_i^r x^s + x^r \delta^s_i \right) ,\\
                                      &amp;= - 2 \, a_{jis} \, x^s,
-    \end{aligned}</span> by symmetry of <span class="math inline">a</span>. So this will also vanish in <span class="math inline">\{ H_i, H_j \}</span>.</p>
-<p>The second term <span class="math display">\begin{aligned}
+    \end{aligned}\]</span> by symmetry of <span class="math inline">\(a\)</span>. So this will also vanish in <span class="math inline">\(\{ H_i, H_j \}\)</span>.</p>
+<p>The second term <span class="math display">\[\begin{aligned}
         -2\,\{  y_i , b_{jr}^s x^r y_s \} &amp;= -2 \, b_{jr}^s \{y_i, x^r y_s\} ,\\
                                           &amp;= -2 \, b_{jr}^s \left( \{y_i, x^r\}  y_s + x^r \{ y_i ,y_i\} \right) ,\\
                                           &amp; = -2 \, b_{ji}^s \, y_s.
-    \end{aligned}</span> The other term gives <span class="math inline">2 b_{ij}^s y_s</span>. Since <span class="math inline">\{ H_i , H_j \} = g_{ij}^k H_k</span>, this gives <span class="math inline">g_{ij}^k = 2 \left( b_{ji}^k - b_{i j}^k\right)</span> which matches Kontsevich and Soibelman’s calculation.</p>
-<p>For the third term <span style="color: blue"> <span class="math display">\begin{aligned}
+    \end{aligned}\]</span> The other term gives <span class="math inline">\(2 b_{ij}^s y_s\)</span>. Since <span class="math inline">\(\{ H_i , H_j \} = g_{ij}^k H_k\)</span>, this gives <span class="math inline">\(g_{ij}^k = 2 \left( b_{ji}^k - b_{i j}^k\right)\)</span> which matches Kontsevich and Soibelman’s calculation.</p>
+<p>For the third term <span style="color: blue"> <span class="math display">\[\begin{aligned}
         2 \, \{ a_{irs} x^r x^s, b_{jt}^{u} x^t y_u \} &amp;= 2 \,a_{irs}\,  b_{jt}^u \{ x^r x^s, x^t y_u \} ,\\
                                                        &amp;= 2 \,a_{irs}\,  b_{jt}^u  \left( \{  x^r x^s, x^t \} y_u +  x^t \{ x^r x^s , y_u \} \right),\\
                                                        &amp;= 2\, a_{irs} \, b_{jt}^u \, x^t \left( \{ x^r  , y_u \} x^s + x^r \{ x^s, y_u \}  \right),\\
@@ -61,8 +61,8 @@
                                                        &amp;= -2 \, a_{irs} \, b_{jt}^r x^t x^s - 2 \, a_{irs} \, b_{jt}^s x^t x^r,\\
                                                        &amp;= -2 \left( a_{ikt} \, b_{js}^k  + \, a_{itk} \, b_{js}^k \right) x^s x^t,\\
                                                        &amp;= -4 \, a_{ikt} \, b_{js}^k  \, x^s x^t.
-    \end{aligned}</span></span> So there is also a <span class="math inline">4 \,a_{jks}\,  b_{it}^k \, x^s \, x^t</span> term.</p>
-<p>The fourth term <span style="color: purple"> <span class="math display">\begin{aligned}
+    \end{aligned}\]</span></span> So there is also a <span class="math inline">\(4 \,a_{jks}\,  b_{it}^k \, x^s \, x^t\)</span> term.</p>
+<p>The fourth term <span style="color: purple"> <span class="math display">\[\begin{aligned}
         \{ a_{irs} x^r x^s, c_{j}^{t u} y_t y_u \} &amp; = a_{irs} \,c_j^{tu} \{ x^r x^s, y_t y_u \},\\
                                                    &amp;= a_{irs}\, c_j^{tu} \left( \{x^r , y_t y_u \} x^s + x^r \{ x^s , y_t y_u \} \right) ,\\
                                                    &amp;= a_{irs}\, c_j^{tu} \left( \left( \{x^r , y_t  \} y_u + y_t \{ x^r, y_u \} \right) x^s + x^r \left( \{ x^s , y_t  \} y_u + y_t \{ x^s , y_u \} \right) \right) ,\\ 
@@ -70,44 +70,44 @@
                                                    &amp;= - \left( a_{irs} \, c_j^{ru} x^s y_u  +  a_{irs} \, c_j^{tr} x^s y_t +  a_{irt} \, c_j^{tu} x^r y_u   +  a_{irs} \, c_j^{ts} x^r y_t   \right) ,\\
                                                     &amp;= - \left( a_{iks} \, c_j^{kt} x^s y_t  +  a_{iks} \, c_j^{tk}  x^s  y_t  +  a_{isk} \, c_j^{kt} x^s y_t  +  a_{isk} \, c_j^{tk} x^s y_t   \right) ,\\
                                                     &amp;= - 4\, a_{jks}\, c_i^{k t} \,x^s\, y_t.
-    \end{aligned}</span></span> Likewise there is a <span class="math inline">4\, a_{jrs}\, c_i^{r t} \,x^s\, y_t</span>.</p>
-<p>The fifth term should give <span class="math inline">y_r\, y_t</span> like terms. <span style="color: red"> <span class="math display">\begin{aligned}
+    \end{aligned}\]</span></span> Likewise there is a <span class="math inline">\(4\, a_{jrs}\, c_i^{r t} \,x^s\, y_t\)</span>.</p>
+<p>The fifth term should give <span class="math inline">\(y_r\, y_t\)</span> like terms. <span style="color: red"> <span class="math display">\[\begin{aligned}
         2 \{ b_{ir}^s x^r y_s , c_{j}^{t u} y_t y_u \} &amp;= 2 \,b_{ir}^s \,c_j^{tu} \{ x^r y_s , y_t \,y_u\} ,\\
                                                        &amp;= 2 \,b_{ir}^s \,c_j^{tu} \left( \{ x^r, y_t y_u \} y_s \right) ,\\
                                                        &amp;= 2 \,b_{ir}^s \,c_j^{tu} \, y_s \left( \{ x^r, y_t \} y_u + y_t \{ x^r , y_u \} \right) ,\\
                                                        &amp;= -2 \,b_{ir}^s \,c_j^{tu} \, y_s \left( \delta^r_t y_u + y_t \delta^r_u \right) ,\\
                                                        &amp;= -4 b_{ik}^s c_j^{kt} y_s y_t,
-    \end{aligned}</span> </span> by symmetry of <span class="math inline">c</span>. This also gives a <span class="math inline">4 b_{jr}^s c_i^{rt} y_s y_t</span> term.</p>
-<p>Finally <span style="color: cyan"> <span class="math display">\begin{aligned}
+    \end{aligned}\]</span> </span> by symmetry of <span class="math inline">\(c\)</span>. This also gives a <span class="math inline">\(4 b_{jr}^s c_i^{rt} y_s y_t\)</span> term.</p>
+<p>Finally <span style="color: cyan"> <span class="math display">\[\begin{aligned}
         4 \{ b_{ir}^s x^r y_s ,b_{jt}^u x^t y_u\}&amp; = 4 b_{ir}^t b_{jt}^s x^r y_s - 4 b_{ir}^s b_{jt}^r x^t y_s ,\\
                                                &amp;= 4 \left(   b_{is}^k b_{jk}^t  - b_{ik}^t b_{js}^k \right) x^s y_t .\\
-    \end{aligned}</span> </span></p>
-<p>Assembling the results <span class="math display">\begin{aligned}
+    \end{aligned}\]</span> </span></p>
+<p>Assembling the results <span class="math display">\[\begin{aligned}
  \{H_i, H_j\} =&amp; - 2\left(  b_{ji}^k - b_{ij}^k \right) y_k  +  4 \left( {\color{blue} a_{jrs} b_{it}^r -  a_{irs} b_{jt}^r } \right)x^s x^t ,\\
                                 &amp;+ 4\left( { \color{purple}a_{jrs} c_i^{r t} -  a_{irs} c_j^{r t}} +  {\color{cyan} b_{is}^k b_{jk}^t  -  b_{ik}^t b_{js}^k }\right) x^s y_t + 4 \left( {\color{red} b_{jr}^s c_i^{rt}  - b_{ir}^s c_j^{rt} }\right) y_s y_t,  
-    \end{aligned}</span></p>
-<p>which is meant to match <span class="math display">g_{ij}^k H_k = - \left( g_{ij}^k  \right) y_k + \left( g_{ij}^k  a_{kst} \right) x^s x^t + \left( 2 g_{ij}^k b_{k s t}^k \right) x^s y_t + \left( g_{ij}^k c_k^{st}\right) y^s y^t.</span></p>
-<p>So reading off each term <span class="math display">\begin{aligned}
+    \end{aligned}\]</span></p>
+<p>which is meant to match <span class="math display">\[g_{ij}^k H_k = - \left( g_{ij}^k  \right) y_k + \left( g_{ij}^k  a_{kst} \right) x^s x^t + \left( 2 g_{ij}^k b_{k s t}^k \right) x^s y_t + \left( g_{ij}^k c_k^{st}\right) y^s y^t.\]</span></p>
+<p>So reading off each term <span class="math display">\[\begin{aligned}
        2 \left(  b_{ji}^k - b_{ij}^k \right) &amp;= g_{ij}^k,\\
        4\left( a_{jks} b_{it}^k -  a_{iks} b_{jt}^k \right) &amp;=  g_{ij}^k  a_{kst}, \\
        4\left(  a_{jks} c_i^{k t} -  a_{ik s} c_j^{k t} +  b_{is}^k b_{jk}^t  -  b_{ik}^t b_{js}^k \right) &amp; = 2 g_{ij}^k b_{k s t}^k, \\ 
        4 \left( b_{jk}^s c_i^{kt}  - b_{ik}^s c_j^{kt}\right) &amp;= g_{ij}^k c_k^{st}.
-    \end{aligned}</span></p>
+    \end{aligned}\]</span></p>
 </section>
 <section id="quantum-case" class="level1">
 <h1>Quantum case</h1>
-<p>Let <span class="math inline">x^i \rightarrow x^i</span> and <span class="math inline">y_i \rightarrow \hbar \,\partial_i</span>. This gives a Lie bracket <span class="math inline">[f,g] = \frac{1}{\hbar} \left( f g - g f \right)</span>. So <span class="math inline">[ \hbar \,\partial_i , x^j ] = \delta_i^j</span> and <span class="math inline">[ x^j, \hbar\, \partial_i ] = - \delta_i^j</span>.</p>
-<p>Introduce the quantised Hamiltonians; <span class="math display">\widehat{H}_i = -\hbar\, \partial_i + a_{ijk} x^i x^j + 2 \,\hbar \,b_{ij}^k x^j \partial_k + \hbar^2 \,c_i^{jk} \partial_j \partial_k + \hbar\, \varepsilon_i.</span></p>
-<p>The calculation of <span class="math inline">[\widehat{H}_i,\widehat{H}_j]= g_{ij}^k \widehat{H}_k</span> is very similar to the classical case, the only difference is from terms involving an <span class="math inline">\varepsilon</span>. <span class="math inline">\varepsilon</span> is determined by terms that give a non-symmetric constant (so all the <span class="math inline">x^i</span> and <span class="math inline">\partial_j</span> vanish) in the Lie bracket. This only happens with equal numbers of <span class="math inline">\partial</span> and <span class="math inline">x</span> terms, so there is only one expression to check</p>
+<p>Let <span class="math inline">\(x^i \rightarrow x^i\)</span> and <span class="math inline">\(y_i \rightarrow \hbar \,\partial_i\)</span>. This gives a Lie bracket <span class="math inline">\([f,g] = \frac{1}{\hbar} \left( f g - g f \right)\)</span>. So <span class="math inline">\([ \hbar \,\partial_i , x^j ] = \delta_i^j\)</span> and <span class="math inline">\([ x^j, \hbar\, \partial_i ] = - \delta_i^j\)</span>.</p>
+<p>Introduce the quantised Hamiltonians; <span class="math display">\[\widehat{H}_i = -\hbar\, \partial_i + a_{ijk} x^i x^j + 2 \,\hbar \,b_{ij}^k x^j \partial_k + \hbar^2 \,c_i^{jk} \partial_j \partial_k + \hbar\, \varepsilon_i.\]</span></p>
+<p>The calculation of <span class="math inline">\([\widehat{H}_i,\widehat{H}_j]= g_{ij}^k \widehat{H}_k\)</span> is very similar to the classical case, the only difference is from terms involving an <span class="math inline">\(\varepsilon\)</span>. <span class="math inline">\(\varepsilon\)</span> is determined by terms that give a non-symmetric constant (so all the <span class="math inline">\(x^i\)</span> and <span class="math inline">\(\partial_j\)</span> vanish) in the Lie bracket. This only happens with equal numbers of <span class="math inline">\(\partial\)</span> and <span class="math inline">\(x\)</span> terms, so there is only one expression to check</p>
 <ul>
-<li><p><span class="math inline">[ a_{irs} x^r x^s ,   \hbar^2 \,c_j^{tu} \partial_t \partial_u ]</span></p></li>
+<li><p><span class="math inline">\([ a_{irs} x^r x^s ,   \hbar^2 \,c_j^{tu} \partial_t \partial_u ]\)</span></p></li>
 </ul>
-<p>Therefore <span class="math display">\begin{aligned}
+<p>Therefore <span class="math display">\[\begin{aligned}
           [ a_{irs} x^r x^s ,   \hbar^2\, c_j^{tu} \partial_t \partial_u ] (f) &amp;=  \hbar \,a_{irs} c_j^{tu} \left( x^r x^s \partial_t \partial_u - \partial_t \partial_u x^r x^s \right)(f) ,\\
                                                                              &amp;= \hbar\, a_{irs} c_j^{tu} \left( x^r x^s \partial_t \partial_u (f) - \partial_t ( \delta_u^r x^s f + x^r \delta_u^s f + x^r x^s \partial_u (f)  ) \right),\\
                                                                             &amp;= \hbar\, a_{irs} c_j^{tu} \big( x^r x^s \partial_t \partial_u (f) - \delta_u^r \delta_t^s f - \delta_u^r x^s \partial_t (f)  - \delta^r_t \delta_u^s f - x^r \delta_u^s \partial_t(f) ,\\
                                                                             &amp;- \delta_t^r x^s \partial_u (f)  - x^r \delta^s_t \partial_u (f) - x^r x^s \partial_t \partial_u (f) \big).
-    \end{aligned}</span> Focusing on the terms which can give a constant <span class="math display">-\hbar  \,a_{irs} c_j^{tu} \left( \delta_u^r \delta_t^s  + \delta^r_t \delta_u^s \right) = -2 \, \hbar \,  a_{ist} \, c_j^{st}.</span> So the other term will be <span class="math inline">2 \, \hbar \,  a_{jst} \, c_i^{st}</span>. This gives an expression relating <span class="math inline">\varepsilon</span> to the other tensors <span class="math display">2 \left( a_{jst} \, c_i^{st} - a_{ist} \, c_j^{st} \right) = g_{ij}^k \varepsilon_k.</span></p>
+    \end{aligned}\]</span> Focusing on the terms which can give a constant <span class="math display">\[-\hbar  \,a_{irs} c_j^{tu} \left( \delta_u^r \delta_t^s  + \delta^r_t \delta_u^s \right) = -2 \, \hbar \,  a_{ist} \, c_j^{st}.\]</span> So the other term will be <span class="math inline">\(2 \, \hbar \,  a_{jst} \, c_i^{st}\)</span>. This gives an expression relating <span class="math inline">\(\varepsilon\)</span> to the other tensors <span class="math display">\[2 \left( a_{jst} \, c_i^{st} - a_{ist} \, c_j^{st} \right) = g_{ij}^k \varepsilon_k.\]</span></p>
 </section>
 
 

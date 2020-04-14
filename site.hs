@@ -20,7 +20,7 @@ pandocMathCompiler =
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
                           writerExtensions = newExtensions,
-                          writerHTMLMathMethod = KaTeX ""}
+                          writerHTMLMathMethod = MathJax ""}
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
 
 pandocLatexCompiler :: Compiler (Item String) 
@@ -30,7 +30,7 @@ pandocLatexCompiler =
         newExtensions = foldr enableExtension defaultExtensions mathExtensions
         writerOptions = defaultHakyllWriterOptions {
                             writerExtensions = newExtensions,
-                            writerHTMLMathMethod = KaTeX "",
+                            writerHTMLMathMethod = MathJax "",
                             writerTableOfContents = True,
                             writerSectionDivs = True}
     in pandocCompilerWith defaultHakyllReaderOptions writerOptions
